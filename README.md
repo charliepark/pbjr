@@ -65,7 +65,7 @@ I'm just recording some steps in the setup of a very basic app. It's all public.
 	  <p class="notice"><%= notice %></p>
 	  <p class="alert"><%= alert %></p>
 
-###### in Terminal
+##### in Terminal
 
     $ rails generate devise User
 
