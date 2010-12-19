@@ -7,7 +7,7 @@ I'm just recording some steps in the setup of a very basic app. It's all public.
 
 ### Setup at Github
 
-###### at Github
+##### at Github
 
   create new app, "pbjr"
 
@@ -64,8 +64,8 @@ I'm just recording some steps in the setup of a very basic app. It's all public.
 
   add the following two lines to the template:
 
-	  <p class="notice"><%= notice %></p>
-	  <p class="alert"><%= alert %></p>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 
 
 ##### in Terminal
