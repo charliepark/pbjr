@@ -6,10 +6,12 @@ I'm just recording some steps in the setup of a very basic app. It's all public.
 ## Process
 
 ### Setup at Github
-- at Github, create new app, "pbjr"
+
+##### at Github, create new app, "pbjr"
 
 ### Setup Locally
-- in Terminal:
+
+##### in Terminal:
 
     $ rails new pbjr
 
@@ -39,27 +41,27 @@ I'm just recording some steps in the setup of a very basic app. It's all public.
 
 ### Installing Devise
 
-- in Terminal
+##### in Terminal
 
     $ gem update devise
 
-- in Gemfile, line 5-ish
+##### in Gemfile, line 5-ish
 
     gem 'devise'
 
-- in Terminal
+##### in Terminal
 
     $ rails generate devise:install
 
-- in config/environments/development.rb
+##### in config/environments/development.rb
 
   add "config.action_mailer.default_url_options = { :host => 'localhost:3000' }" just before the 'end'
 
-- in config/routes.rb
+##### in config/routes.rb
 
 	uncomment the root :to line (around line 51)
 
-- in app/views/layouts/application.html.erb
+##### in app/views/layouts/application.html.erb
 
   add the following two lines to the template:
 	  <p class="notice"><%= notice %></p>
@@ -79,15 +81,8 @@ I'm just recording some steps in the setup of a very basic app. It's all public.
 
 
 
-- NEXT:
+#### NEXT:
+
 	- try writing some tests
 	-	Begin setting up other models for budget and receipts and whatnot.
 	-	Create friendlier routes for sign_up and other account actions
-
-
-
-
-### TODO
-
-- set up authentication ... Facebook? Twitter? Devise?
-  - Devise
