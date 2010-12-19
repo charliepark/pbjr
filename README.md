@@ -5,8 +5,10 @@ I'm just recording some steps in the setup of a very basic app. It's all public.
 
 ## Process
 
+### Setup at Github
 - at Github, create new app, "pbjr"
 
+### Setup Locally
 - in Terminal:
 $ rails new pbjr
 $ cd pbjr
@@ -17,12 +19,35 @@ $ git remote add origin git@github.com:charliepark/pbjr.git
 $ git push origin master
 $ touch README.md
 $ rm README
+$ git add .
+$ git commit -am "Replaced README with README.md"
+$ git push
 
+### Installing Devise
+
+- in Terminal
+$ gem update devise
+
+- in Gemfile, line 5-ish
+  gem 'devise'
+
+- in Terminal
+$ rails generate devise:install
+
+- in config/environments/development.rb
+  add "config.action_mailer.default_url_options = { :host => 'localhost:3000' }" just before the 'end'
+
+- in config/routes.rb
+	uncomment the root :to line (around line 51)
+
+- in app/views/layouts/application.html.erb
+  add the following two lines to the template:
+	  <p class="notice"><%= notice %></p>
+	  <p class="alert"><%= alert %></p>
 
 
 
 ### TODO
 
 - set up authentication ... Facebook? Twitter? Devise?
-  - let's try Facebook, as more have it
-
+  - Devise
