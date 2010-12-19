@@ -12,16 +12,27 @@ I'm just recording some steps in the setup of a very basic app. It's all public.
 - in Terminal:
 
     $ rails new pbjr
+
     $ cd pbjr
+
     $ git init
+
     $ git add .
+
     $ git commit -am "First commit. Added Rails app."
+
     $ git remote add origin git@github.com:charliepark/pbjr.git
+
     $ git push origin master
+
     $ touch README.md
+
     $ rm README
+
     $ git add .
+
     $ git commit -am "Replaced README with README.md"
+
     $ git push
 
 ### Installing Devise
