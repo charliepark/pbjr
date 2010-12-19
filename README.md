@@ -35,6 +35,8 @@ I'm just recording some steps in the setup of a very basic app. It's all public.
 
     $ git push
 
+
+
 ### Installing Devise
 
 - in Terminal
@@ -62,6 +64,18 @@ I'm just recording some steps in the setup of a very basic app. It's all public.
   add the following two lines to the template:
 	  <p class="notice"><%= notice %></p>
 	  <p class="alert"><%= alert %></p>
+
+- in Terminal
+
+    $ rails generate devise User
+
+    $ rake db:migrate
+
+- NEXT:
+	- try writing some tests
+	-	Begin setting up other models for budget and receipts and whatnot.
+	-	Create friendlier routes for sign_up and other account actions
+
 
 
 
