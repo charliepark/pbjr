@@ -83,3 +83,47 @@ I'm just recording some steps in the setup of a very basic app. It's all public.
 - try writing some tests
 -	Begin setting up other models for budget and receipts and whatnot.
 -	Create friendlier routes for sign_up and other account actions
+
+
+# 2010-12-24
+
+## Some Thoughts on the Models (no tests written yet)
+
+### User
+
+has_many :kids
+
+
+### Kid
+
+has_many :events
+has_many :transactions, :through => :events
+
+columns:
+  spending_col:boolean
+  saving_col:boolean
+  saving_alt_name:string
+  giving_col:boolean
+  giving_percent:integer
+
+### Event
+
+belongs_to :kid
+has_many :transactions
+
+columns:
+  kid_id:integer
+  date:date
+  income:boolean
+  note:string
+
+### Transaction
+
+belongs_to :event
+
+columns:
+  event_id:integer
+  amount_cents:integer
+  category:string
+
+
