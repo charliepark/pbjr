@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Page Title</title>
+	<style type="text/css" media="screen">
+	/* from Eric Meyer: v1.0 | 20080212 */
+	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td{background:transparent;border:0;font-size:100%;font-weight:inherit;margin:0;outline:0;padding:0;text-decoration:none;vertical-align:baseline}
+	body{line-height:1}
+	ol, ul{list-style:none}
+	blockquote, q{quotes:none}
+	blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}
+	/* remember to define focus styles! */
+	:focus{outline:0}
+	/* remember to highlight inserts somehow! */
+	ins{text-decoration:none}
+	del{text-decoration:line-through}
+	table{border-collapse:collapse;border-spacing:0}
+	/* end of Eric Meyer's CSS Reset */
+
+	body, input, select, textarea{color:#eef;font-family:'RockoFLFBold','Arial Rounded MT Bold','helvetica neue',helvetica,arial,sans-serif;font-size:16px;line-height:1.5}
+
+	body{}	
+	html{background:#1b1b1f;}
+	p{clear:both;font-size:16px;text-align:left;}
+	.footer p{text-align:center;}
+	td{vertical-align:top}
+	.col_head{font-size:20px;padding-top:10px;padding-right:50px;text-align:right}
+	.date{font-size:12px;margin:0 20px 0 0px;padding-top:45px;text-align:center;text-transform:uppercase;width:120px;}
+	.date_day_name{}
+	.date_month_name{}
+	.exchange{background:#001;border:15px solid #44444c;font-size:30px;line-height:30px;margin:10px 12px;padding:20px;text-align:right;width:120px;-moz-border-radius: 30px;border-radius: 20px;}
+	.footer{background:#001;border-top:4px solid #bbc;clear:both;margin-top:40px;padding:20px 0;text-align:center;}
+	.head_date{display:inline-block;font-size:16px;margin:0 0 0 -10px;padding:0;text-align:center;}
+	.ledger{margin:0 auto;position:relative;left:-20px;}
+	.in{background:#C9DE55;border-color:#7D9100;color:#000}
+	.investment_summary{font-size:20px;text-align:center;}
+	.investment_summary_wrapper{padding:20px 0}
+	.link_highlight{color:#eef}
+	.out{background:#F2DA91;border-color:#F2B94F;color:#000}
+	.page_header{font-size:40px;line-height:40px;padding:40px 0;text-align:center;}
+	.page_header.with_subhead{padding-bottom:0}
+	.page_sub_head{color:#bbc;font-size:30px;line-height:30px;padding:10px 0 20px 0;text-align:center;}
+	.note{color:#445;font-size:12px;height:18px;overflow:hidden;text-align:center;text-transform:none}
+	.running_total{color:#556;padding-right:50px;text-align:right;}
+	.select_button{background:#445;display:inline-block;line-height:20px;margin-left:5px;text-align:center;width:20px;height:20px;-moz-border-radius: 10px;border-radius: 10px;}
+	.subdued{color:#556}
+	.table_footer{border-top:4px solid rgba(255,255,255,0.1)}
+	.total_col{border-left:4px solid rgba(255,255,255,0.1)}
+	#nav{position:absolute;top:10px;right:0;}
+	.nav li{display:inline;margin:10px 0;border-left:1px solid #445;}
+	.nav li:first-child{border:0;}
+	.nav li a{padding:20px;}
+	a{color:#445}
+	a:hover{color:#bbc}
+	</style>
+	
+</head>
+<body>
+	<h1 class="page_header with_subhead">PearBudget Junior</h1>
+	<h1 class="page_sub_head">Emily&rsquo;s Account</h1>
+	<ul id="nav" class="nav"><li><a href="">parent&rsquo;s view</a></li><li><a href="">account info</a></li></ul>
+	<table class="ledger">
+		<thead>
+			<tr>
+				<th scope="col"><div class="col_head head_date subdued">NOVEMBER</div><div class="select_button">v</div></th>
+				<th scope="col"><div class="col_head head_spending">Spending</div></th>
+				<th scope="col"><div class="col_head head_saving">Saving</div></th>
+				<th scope="col"><div class="col_head head_giving">Giving</div></th>
+				<th scope="col"><div class="col_head head_total subdued">Total</div></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class="event">
+				<td><div class="date">At the start of the month:</div></td>
+				<td><div class="exchange"><span class="amount">$9.00</span><!--<p class="note">from thing</p>--></div></td>
+				<td><div class="exchange"><span class="amount">$4.00</span></div></td>
+				<td><div class="exchange"><span class="amount">$1.00</span></div></td>
+				<td class="total_col"><div class="exchange">$14.00</div></td>
+			</tr>
+			<tr class="event">
+				<td><div class="date"><span class="date_day_name">Saturday</span> <span class="date_month_name">Nov.</span> <span class="date_day_number">6</span><p class="note">allowance</p></div></td>
+				<td><div class="exchange in"><span class="amount">$5.00</span></div></td>
+				<td><div class="exchange in"><span class="amount">$4.00</span></div></td>
+				<td><div class="exchange in"><span class="amount">$1.00</span></div></td>
+				<td class="total_col"><div class="exchange in">$10.00</div></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><div class="running_total">$14.00</div></td>
+				<td><div class="running_total">$8.00</div></td>
+				<td><div class="running_total">$2.00</div></td>
+				<td class="total_col"><div class="running_total">$24.00</div></td>
+			</tr>
+			<tr class="event">
+				<td><div class="date"><span class="date_day_name">Saturday</span> <span class="date_month_name">Nov.</span> <span class="date_day_number">13</span><p class="note">allowance</p></div></td>
+				<td><div class="exchange in"><span class="amount">$5.00</span></div></td>
+				<td><div class="exchange in"><span class="amount">$4.00</span></div></td>
+				<td><div class="exchange in"><span class="amount">$1.00</span></div></td>
+				<td class="total_col"><div class="exchange in">$10.00</div></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><div class="running_total">$19.00</div></td>
+				<td><div class="running_total">$12.00</div></td>
+				<td><div class="running_total">$3.00</div></td>
+				<td class="total_col"><div class="running_total">$34.00</div></td>
+			</tr>
+			<tr class="event">
+				<td><div class="date"><span class="date_day_name">Saturday</span> <span class="date_month_name">Nov.</span> <span class="date_day_number">13</span><p class="note">bead kit</p></div></td>
+				<td><div class="exchange out"><span class="amount">$12.81</span></div></td>
+				<td></td>
+				<td></td>
+				<td class="total_col"><div class="exchange out">$12.81</div></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><div class="running_total">$6.19</div></td>
+				<td><div class="running_total">$12.00</div></td>
+				<td><div class="running_total">$3.00</div></td>
+				<td class="total_col"><div class="running_total">$21.19</div></td>
+			</tr>
+			<tr class="event">
+				<td><div class="date"><span class="date_day_name">Sunday</span> <span class="date_month_name">Nov.</span> <span class="date_day_number">14</span><p class="note">church tithe</p></div></td>
+				<td></td>
+				<td></td>
+				<td><div class="exchange out"><span class="amount">$3.00</span></div></td>
+				<td class="total_col"><div class="exchange out">$3.00</div></td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr class="table_footer">
+				<tr>
+					<th scope="col"></th>
+					<th scope="col"><div class="col_head head_spending">Spending</div></th>
+					<th scope="col"><div class="col_head head_saving">Saving</div></th>
+					<th scope="col"><div class="col_head head_giving">Giving</div></th>
+					<th scope="total_col"><div class="col_head head_total subdued">Total</div></th>
+				</tr>
+				
+				<tr class="event">
+					<td><div class="date">Now:</div></td>
+					<td><div class="exchange"><span class="amount">$6.19</span><!--<p class="note">from thing</p>--></div></td>
+					<td><div class="exchange"><span class="amount">$12.00</span></div></td>
+					<td><div class="exchange"><span class="amount">$0.00</span></div></td>
+					<td class="total_col"><div class="exchange">$18.19</div></td>
+				</tr>
+			</tr>
+		</tfoot>
+	</table>
+	<div class="investment_summary_wrapper">
+		<p class="investment_summary"><a href="" class="subdued">Total in <span class="link_highlight">&ldquo;Investment&rdquo;</span>: <span class="link_highlight">$24.00</span></a></p>
+	</div>
+	<div class="footer">
+		<p><a href="">need help?</a></p>
+	</div>
+</body>
+</html>
