@@ -1,2 +1,8 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
+jQuery.fn.onloadEvents = function() {
+	$('#example').red();
+	
+};
+
+jQuery.fn.red = function() {
+	$(this).css('background','red');
+}

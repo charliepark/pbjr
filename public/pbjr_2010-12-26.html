@@ -25,13 +25,22 @@
 
 	body{}
 	html{background:#1b1b1f;}
+	input{background:#eef;border:0;color:#445;padding: 0 5px;-moz-border-radius: 5px;border-radius: 5px;width:100px}
+	input[type="checkbox"]{width:20px;height:20px}
 	p{clear:both;font-size:16px;text-align:left;}
 	.footer p{text-align:center;}
 	td{vertical-align:top}
+	#accounts_list tbody tr{border-top:1px solid #bbc;}
+	#accounts_list td{font-size:14px;width:130px}
 
+
+	#accounts_list{font-size:20px;text-align:left;}
+	#admin_box{background:#0D0D0F;border:15px solid #445;font-size:30px;line-height:30px;padding:20px;position:fixed;top:50px;right:50px;text-align:right;width:800px;-moz-border-radius: 30px;border-radius: 20px;text-align:center}
 	#month_name{background:#0D0D0F;font-size:30px;line-height:50px;margin:0 auto;padding-bottom:4px;text-align:center;width:380px;-moz-border-radius: 15px;border-radius: 15px;}
+	#new_step_1{background:#0D0D0F;border:15px solid #445;font-size:30px;line-height:30px;padding:20px;position:fixed;top:50%;left:50%;margin-left:-435px;text-align:right;width:800px;-moz-border-radius: 30px;border-radius: 20px;text-align:center}
+	#new_step_2{background:#0D0D0F;border:15px solid #445;font-size:30px;line-height:30px;padding:20px;position:fixed;top:60%;left:50%;margin-left:-435px;text-align:right;width:800px;-moz-border-radius: 30px;border-radius: 20px;text-align:center}
 
-	.col_head{font-size:20px;padding-top:10px;padding-right:50px;text-align:right}
+	.col_head{font-size:20px;padding-top:10px;text-align:center}
 	.date{color:#bbc;font-size:14px;margin:0 20px 0 0px;padding-top:35px;text-align:center;text-transform:uppercase;width:160px;}
 	.date_day_name{}
 	.date_month_name{}
@@ -43,6 +52,7 @@
 	.footer{background:#001;border-top:4px solid #bbc;clear:both;margin-top:40px;padding:20px 0;text-align:center;}
 	.head_date{display:inline-block;font-size:16px;margin:0 0 0 -10px;padding:0;text-align:center;}
 	.in{background:#C9DE55;border-color:#7D9100;color:#000}
+	.input_percent{padding-right:20px;text-align:right;width:30px;}
 	.in span:before, 	.out span:before{color:#7D9100;content:"+";font-size:60px;line-height:70px;opacity:.5;position:absolute;top:0;left:10px}
 	.out span:before{color:coral;content:"-";line-height:62px;opacity:.8}
 	.ledger{margin:0 auto;}
@@ -54,7 +64,7 @@
 	.page_header{font-size:40px;line-height:40px;padding:40px 0;text-align:center;}
 	.page_header.with_subhead{padding-bottom:0}
 	.page_sub_head{color:#bbc;font-size:30px;line-height:30px;padding:10px 0 20px 0;text-align:center;}
-	.running_total{color:#445;font-size:20px;padding-right:50px;text-align:right;}
+	.running_total{color:#445;font-size:20px;padding-right:66px;text-align:right;}
 	.select_button{background:#445;display:inline-block;line-height:20px;margin-left:5px;text-align:center;width:20px;height:20px;-moz-border-radius: 10px;border-radius: 10px;}
 	.subdued{color:#556}
 	.table_footer{border-top:4px solid rgba(255,255,255,0.1)}
@@ -80,9 +90,9 @@
 		<thead>
 			<tr>
 				<th scope="col"></th>
-				<th scope="col"><div class="col_head head_spending">Spending</div></th>
-				<th scope="col"><div class="col_head head_saving">Saving</div></th>
-				<th scope="col"><div class="col_head head_giving">Giving</div></th>
+				<th scope="col"><h3 class="col_head head_spending">Spending</h3></th>
+				<th scope="col"><h3 class="col_head head_saving">Saving</h3></th>
+				<th scope="col"><h3 class="col_head head_giving">Giving</h3></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -165,13 +175,36 @@
 		</tfoot>
 	</table>
 
-	<div id="add_new" style="width:618px;position:fixed;bottom:0;left:0;padding:0 15px;-moz-border-radius: 10px 10px 0 0;DISPLAY:none">Add a new entry
-		
-		<div class="exchange new"><span class="amount">$5.00</span></div>
-		<div class="exchange in"><span class="amount">$5.00</span></div>
-		<div class="exchange out"><span class="amount">$5.00</span></div>
+	<div id="new_entry">
+		<div id="new_step_1">
+			<p>On [date], I made <input /> from <input /></p>
 		</div>
-	
+		<div id="new_step_2">
+			<p>Step 2!!!</p>
+		</div>
+	</div>
+
+	<div id="admin_box">
+		<table id="accounts_list">
+			<thead>
+				<tr>
+					<th>child</th>
+					<th>spending</th>
+					<th>saving</th>
+					<th>giving</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Lucy</td>
+					<td><input type="checkbox" checked="checked"/></td>
+					<td><input type="checkbox" checked="checked"/><input type="text" class="input_percent" placeholder="goal" /></td>
+					<td><input type="checkbox" checked="checked"/><input type="text" value="10" class="input_percent" /></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
 	<div class="footer">
 		<p><a href="#" id="enable_editing_and_deleting_link">click here to edit (or delete) your entries</a></p>
 	</div>
@@ -197,5 +230,8 @@
 			</li>
 		</ul>
 	</div>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+	<script type="text/javascript" src="javascripts/application.js"></script>
+	<script type="text/javascript">$(function(){$().onloadEvents();})</script>	
 </body>
 </html>
