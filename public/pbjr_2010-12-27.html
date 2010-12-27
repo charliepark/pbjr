@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Emily&rsquo;s PearBudget</title>
+	<style type="text/css" media="screen">
+	/* from Eric Meyer: v1.0 | 20080212 */
+	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td{background:transparent;border:0;font-size:100%;font-weight:inherit;margin:0;outline:0;padding:0;text-decoration:none;vertical-align:baseline}
+	body{line-height:1}
+	ol, ul{list-style:none}
+	blockquote, q{quotes:none}
+	blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}
+	/* remember to define focus styles! */
+	:focus{outline:0}
+	/* remember to highlight inserts somehow! */
+	ins{text-decoration:none}
+	del{text-decoration:line-through}
+	table{border-collapse:collapse;border-spacing:0}
+	/* end of Eric Meyer's CSS Reset */
+
+	body, input, select, textarea{color:#eef;font-family:'RockoFLFBold','Arial Rounded MT Bold','helvetica neue',helvetica,arial,sans-serif;font-size:16px;line-height:1.5}
+
+	a{color:#445}
+	a:hover{color:#bbc}
+
+	body{}
+	html{background:#1b1b1f;}
+	input{background:#eef;border:0;color:#445;padding: 0 5px;-moz-border-radius: 5px;border-radius: 5px;width:100px}
+	input[type="checkbox"]{float:left;margin:5px 2px 0 0;width:20px;}
+	#accounts_list input{background:#ccd;color:#000;font-size:12px;-moz-border-radius: 4px;border-radius: 4px;}
+	p{clear:both;font-size:16px;text-align:left;}
+	.footer p{text-align:center;}
+	td{vertical-align:top}
+	#accounts_list tbody tr{border-top:1px solid #bbc;}
+	#accounts_list td{font-size:16px;line-height:24px;width:120px}
+	#accounts_list td.accounts_giving{width:74px;}
+	#accounts_list th{padding-left:2px;}
+
+	#accounts_list{font-size:20px;text-align:left;}
+	#admin_box{background:#0D0D0F;border:15px solid #445;font-size:30px;line-height:30px;padding:20px;position:absolute;top:40px;right:10px;text-align:right;width:600px;-moz-border-radius: 30px;border-radius: 20px;text-align:center}
+	#month_name{background:#0D0D0F;font-size:30px;line-height:50px;margin:0 auto;padding-bottom:4px;text-align:center;width:380px;-moz-border-radius: 15px;border-radius: 15px;}
+	#new_step_1{background:#0D0D0F;border:15px solid #445;font-size:30px;line-height:30px;padding:20px;position:fixed;top:50%;left:50%;margin-left:-435px;text-align:right;width:800px;-moz-border-radius: 30px;border-radius: 20px;text-align:center}
+	#new_step_2{background:#0D0D0F;border:15px solid #445;font-size:30px;line-height:30px;padding:20px;position:fixed;top:60%;left:50%;margin-left:-435px;text-align:right;width:800px;-moz-border-radius: 30px;border-radius: 20px;text-align:center}
+
+
+	.col_head{font-size:20px;padding-top:10px;text-align:center}
+	.date{color:#bbc;font-size:14px;margin:0 20px 0 0px;padding-top:35px;text-align:center;text-transform:uppercase;width:160px;}
+	.date_day_name{}
+	.date_month_name{}
+
+	.edit_and_delete_wrapper{background:#112;border:5px solid #334;color:#445;display:block;font-size:10px;line-height:20px;margin:4px auto;text-align:center;visibility:hidden;width:90px;-moz-border-radius: 10px;border-radius: 10px;}
+	.edit_and_delete_wrapper:first-child{margin-top:30px;}
+	.edit{display:block;}
+	.exchange{background:#0D0D0F;border:15px solid #445;font-size:30px;line-height:30px;margin:10px 30px;padding:20px;position:relative;text-align:right;width:120px;-moz-border-radius: 30px;border-radius: 20px;}
+	.floating_box{-moz-box-shadow:0 2px 5px #001;box-shadow:0 10px 10px #fff;}
+	.footer{background:#001;border-top:4px solid #bbc;clear:both;margin-top:40px;padding:20px 0;text-align:center;}
+	.head_date{display:inline-block;font-size:16px;margin:0 0 0 -10px;padding:0;text-align:center;}
+	.in{background:#C9DE55;border-color:#7D9100;color:#000}
+	.input_goal{width:60px;}
+	.input_name{margin-left:2px;width:60px;}
+	.input_percent{padding-right:16px;text-align:right;width:20px;}
+	.in span:before, 	.out span:before{color:#7D9100;content:"+";font-size:60px;line-height:70px;opacity:.5;position:absolute;top:0;left:10px}
+	.out span:before{color:coral;content:"-";line-height:62px;opacity:.8}
+	.ledger{margin:0 auto;}
+	.link_highlight{color:#eef}
+	.month_nav{position:relative;top:-2px}
+	.note{color:#778;font-size:14px;height:18px;margin:0 20px 0 0;overflow:hidden;text-align:center;text-transform:none}
+	.new{cursor:pointer;width:550px;text-align:center}
+	.out{background:#F2DA91;border-color:coral;color:#000}
+	.page_header{font-size:40px;line-height:40px;padding:40px 0;text-align:center;}
+	.page_header.with_subhead{padding-bottom:0}
+	.page_sub_head{color:#bbc;font-size:30px;line-height:30px;padding:10px 0 20px 0;text-align:center;}
+	.percent_wrapper{position:relative;}
+	.percent_wrapper:after{content:"%";font-size:12px;position:relative;left:-15px;color:#445}
+	.running_total{color:#445;font-size:20px;padding-right:66px;text-align:right;}
+	.select_button{background:#445;display:inline-block;line-height:20px;margin-left:5px;text-align:center;width:20px;height:20px;-moz-border-radius: 10px;border-radius: 10px;}
+	.subdued{color:#556}
+	.table_footer{border-top:4px solid rgba(255,255,255,0.1)}
+	.total{color:#778;font-size:14px;height:18px;margin:0 20px 0 0;overflow:hidden;text-align:center;text-transform:none}
+	.total_col{border-left:4px solid rgba(255,255,255,0.1)}
+	#nav{position:absolute;top:10px;right:0;}
+	.nav li{display:inline;margin:10px 0;border-left:1px solid #445;}
+	.nav li:first-child{border:0;}
+	.nav li a{color:#778;padding:20px;}
+	.nav li a:hover{color:#bbc}
+	
+	#colophon{color:#778}
+	#colophon h3{color:#eef;font-size:20px;margin-top:20px;}
+	</style>
+	
+</head>
+<body>
+	<h1 class="page_header with_subhead">PearBudget Junior</h1>
+	<h1 class="page_sub_head">Emily&rsquo;s Account</h1>
+	<ul id="nav" class="nav"><li><a href="">need help?</a></li><li><a href="">home</a></li><!-- only "home" if more than one child listed --><li><a href="">admin</a></li><li><a href="">sign out</a></li></ul>
+	<h2 id="month_name"><a href="" class="month_nav">&laquo;</a> November <a href="" class="month_nav">&raquo;</a></h2>
+	<table class="ledger">
+		<thead>
+			<tr>
+				<th scope="col"></th>
+				<th scope="col"><h3 class="col_head head_spending">Spending</h3></th>
+				<th scope="col"><h3 class="col_head head_saving">Saving</h3></th>
+				<th scope="col"><h3 class="col_head head_giving">Giving</h3></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class="event">
+				<td><div class="date">At the start of November</div><p class="total">$14.00</p></td>
+				<td><div class="exchange"><span class="amount">$9.00</span><!--<p class="note">from thing</p>--></div></td>
+				<td><div class="exchange"><span class="amount">$4.00</span></div></td>
+				<td><div class="exchange"><span class="amount">$1.00</span></div></td>
+			</tr>
+			<tr class="event">
+				<td><div class="date"><span class="date_day_name">Saturday</span> <span class="date_month_name">Nov.</span> <span class="date_day_number">6</span></div><p class="note">allowance</p><p class="total">+ $10.00</p></td>
+				<td><div class="exchange in"><span class="amount">$5.00</span></div></td>
+				<td><div class="exchange in"><span class="amount">$4.00</span></div></td>
+				<td><div class="exchange in"><span class="amount">$1.00</span></div></td>
+				<td><div class="edit_and_delete_wrapper"><a href="" class="edit">edit this row</a></div><div class="edit_and_delete_wrapper"><a href="" class="delete">delete</a> this row</div></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><div class="running_total">$14.00</div></td>
+				<td><div class="running_total">$8.00</div></td>
+				<td><div class="running_total">$2.00</div></td>
+			</tr>
+			<tr class="event">
+				<td><div class="date"><span class="date_day_name">Saturday</span> <span class="date_month_name">Nov.</span> <span class="date_day_number">13</span></div><p class="note">allowance</p><p class="total">+ $10.00</p></td>
+				<td><div class="exchange in"><span class="amount">$5.00</span></div></td>
+				<td><div class="exchange in"><span class="amount">$4.00</span></div></td>
+				<td><div class="exchange in"><span class="amount">$1.00</span></div></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><div class="running_total">$19.00</div></td>
+				<td><div class="running_total">$12.00</div></td>
+				<td><div class="running_total">$3.00</div></td>
+			</tr>
+			<tr class="event">
+				<td><div class="date"><span class="date_day_name">Saturday</span> <span class="date_month_name">Nov.</span> <span class="date_day_number">13</span></div><p class="note">bead kit</p><p class="total">- $12.81</p></td>
+				<td><div class="exchange out"><span class="amount">$12.81</span></div></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><div class="running_total">$6.19</div></td>
+				<td><div class="running_total">$12.00</div></td>
+				<td><div class="running_total">$3.00</div></td>
+			</tr>
+			<tr class="event">
+				<td><div class="date"><span class="date_day_name">Sunday</span> <span class="date_month_name">Nov.</span> <span class="date_day_number">14</span></div><p class="note">church tithe</p><p class="total">- $3.00</p></td>
+				<td></td>
+				<td></td>
+				<td><div class="exchange out"><span class="amount">$3.00</span></div></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><div class="running_total">$6.19</div></td>
+				<td><div class="running_total">$12.00</div></td>
+				<td><div class="running_total">$0.00</div></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td colspan="3"><div class="exchange in new">click here to add a new line</div></td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr class="table_footer">
+				<tr>
+					<th scope="col"></th>
+					<th scope="col"><div class="col_head head_spending">Spending</div></th>
+					<th scope="col"><div class="col_head head_saving">Saving</div></th>
+					<th scope="col"><div class="col_head head_giving">Giving</div></th>
+				</tr>
+				
+				<tr class="event">
+					<td><div class="date">Currently Available</div><p class="total">$18.19</p></td>
+					<td><div class="exchange"><span class="amount">$6.19</span></div></td>
+					<td><div class="exchange"><span class="amount">$12.00</span></div></td>
+					<td><div class="exchange"><span class="amount">$0.00</span></div></td>
+				</tr>
+			</tr>
+		</tfoot>
+	</table>
+
+	<div id="new_entry">
+		<div id="new_step_1">
+			<p>On [date], I made <input /> from <input /></p>
+		</div>
+		<div id="new_step_2">
+			<p>Step 2!!!</p>
+		</div>
+	</div>
+
+	<div id="admin_box" class="floating_box">
+		<div class="" style="background:red;border:10px solid #fff;position:relative;top:-20px;"></div>
+		<table id="accounts_list">
+			<thead>
+				<tr>
+					<th>child</th>
+					<th>spending</th>
+					<th>saving</th>
+					<th>giving</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><input type="text" class="input_name" value="Lucy" /></td>
+					<td><input type="checkbox" checked="checked"/></td>
+					<td><input type="checkbox" checked="checked"/><input type="text" class="input_goal" placeholder="goal" value="saving" /></td>
+					<td class="accounts_giving"><input type="checkbox" checked="checked"/><span class="percent_wrapper"><input type="text" value="10" class="input_percent" /></span></td>
+				</tr>
+				<tr>
+					<td><input type="text" class="input_name" value="Kate" /></td>
+					<td><input type="checkbox" checked="checked"/></td>
+					<td><input type="checkbox" checked="checked"/><input type="text" class="input_goal" placeholder="goal" value="saving" /></td>
+					<td class="accounts_giving"><input type="checkbox" checked="checked"/><span class="percent_wrapper"><input type="text" value="10" class="input_percent" /></span></td>
+				</tr>
+				<tr>
+					<td><input type="text" class="input_name" value="Frances" /></td>
+					<td><input type="checkbox" checked="checked"/></td>
+					<td><input type="checkbox" checked="checked"/><input type="text" class="input_goal" placeholder="goal" value="saving" /></td>
+					<td class="accounts_giving"><input type="checkbox" checked="checked"/><span class="percent_wrapper"><input type="text" value="10" class="input_percent" /></span></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="footer">
+		<p><a href="#" id="enable_editing_and_deleting_link">click here to edit (or delete) your entries</a></p>
+	</div>
+	<div id="colophon" style="">
+		<ul>
+			<li><h3>Text Colors</h3>
+				<ul>
+					<li style="color:#445">#445</li>
+					<li style="color:#778">#778</li>
+					<li style="color:#bbc">#bbc</li>
+					<li style="color:#eef">#eef</li>
+				</ul>
+			</li>
+			<li><h3>Font Sizes</h3>
+				<ul>
+					<li style="font-size:10px">10 - edit / delete links</li>
+					<li style="font-size:14px">14 - notes, dates</li>
+					<li style="font-size:16px">16 - default</li>
+					<li style="font-size:20px">20 - column header, running total</li>
+					<li style="font-size:30px">30 - page subhead, large numbers</li>
+					<li style="font-size:40px">40 - page head</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+	<script type="text/javascript" src="javascripts/application.js"></script>
+	<script type="text/javascript">$(function(){$().onloadEvents();})</script>	
+</body>
+</html>
