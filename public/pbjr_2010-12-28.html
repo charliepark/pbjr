@@ -23,6 +23,7 @@
 	a{color:#445}
 	a:hover{color:#bbc}
 	.floating_box a:hover{color:#0D0D0F}
+	.new a{color:inherit}
 
 	body{}
 	.floating_box h3{font-size:30px;line-height:30px;padding:10px;text-align:left;}
@@ -55,8 +56,8 @@
 	#new_password_cancel{color:#445;font-size:12px;margin-top:10px;margin-left:-70px;}
 	#new_password_form{color:#eef;display:none;}
 	#new_password_trigger{font-size:12px;padding:10px;text-align:center;}
-	#new_step_1{background:#0D0D0F;border:15px solid #445;font-size:30px;line-height:30px;padding:20px;position:fixed;top:50%;left:50%;margin-left:-435px;text-align:right;width:800px;-moz-border-radius: 30px;border-radius: 20px;text-align:center}
-	#new_step_2{background:#0D0D0F;border:15px solid #445;font-size:30px;line-height:30px;padding:20px;position:fixed;top:60%;left:50%;margin-left:-435px;text-align:right;width:800px;-moz-border-radius: 30px;border-radius: 20px;text-align:center}
+	#new_step_1{background:#0D0D0F;border:15px solid #445;font-size:30px;line-height:30px;padding:20px;position:fixed;top:20%;left:50%;margin-left:-435px;text-align:right;width:800px;-moz-border-radius: 30px;border-radius: 20px;text-align:center}
+	#new_step_2{background:#0D0D0F;border:15px solid #445;font-size:30px;line-height:30px;padding:20px;position:fixed;top:30%;left:50%;margin-left:-435px;text-align:right;width:800px;-moz-border-radius: 30px;border-radius: 20px;text-align:center}
 
 
 	.close{color:#445;position:absolute;top:0;right:0;padding:0 10px;text-align:right;width:auto;}
@@ -306,7 +307,7 @@
 			</tr>
 			<tr>
 				<td></td>
-				<td colspan="3"><div class="exchange in new">click here to add a new line</div></td>
+				<td colspan="3"><div class="exchange in new"><a href="new_entry" class="popup_trigger">click here to add a new line</a></div></td>
 			</tr>
 		</tbody>
 		<tfoot>
@@ -328,11 +329,11 @@
 		</tfoot>
 	</table>
 
-	<div id="new_entry">
-		<div id="new_step_1">
+	<div id="new_entry" class="floating_box">
+		<div id="new_step_1" class="floating_box" style="display:block">
 			<p>On [date], I made <input /> from <input /></p>
 		</div>
-		<div id="new_step_2">
+		<div id="new_step_2" class="floating_box" style="display:block">
 			<p>Step 2!!!</p>
 		</div>
 	</div>
