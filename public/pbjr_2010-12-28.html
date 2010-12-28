@@ -52,7 +52,7 @@
 	#month_name{background:#0D0D0F;font-size:30px;line-height:50px;margin:0 auto;padding-bottom:4px;text-align:center;width:380px;-moz-border-radius: 15px;border-radius: 15px;}
 	#new_password_cancel{color:#445;font-size:12px;margin-top:10px;margin-left:-70px;}
 	#new_password_form{display:none;}
-	#new_password_trigger{cursor:pointer;padding:10px;text-align:center;}
+	#new_password_trigger{padding:10px;text-align:center;}
 	#new_step_1{background:#0D0D0F;border:15px solid #445;font-size:30px;line-height:30px;padding:20px;position:fixed;top:50%;left:50%;margin-left:-435px;text-align:right;width:800px;-moz-border-radius: 30px;border-radius: 20px;text-align:center}
 	#new_step_2{background:#0D0D0F;border:15px solid #445;font-size:30px;line-height:30px;padding:20px;position:fixed;top:60%;left:50%;margin-left:-435px;text-align:right;width:800px;-moz-border-radius: 30px;border-radius: 20px;text-align:center}
 
@@ -81,7 +81,7 @@
 	.out span:before{color:coral;content:"-";line-height:62px;opacity:.8}
 	.ledger{margin:0 auto;}
 	.link_highlight{color:#eef}
-	.linklike{cursor:arrow}
+	.linklike{cursor:pointer}
 	.month_nav{position:relative;top:-2px}
 	.note{color:#778;font-size:14px;height:18px;margin:0 20px 0 0;overflow:hidden;text-align:center;text-transform:none}
 	.new{cursor:pointer;width:550px;text-align:center}
@@ -375,13 +375,13 @@
 		<form action="" id="">
 			<label class="paired">e-mail</label><input class="labeled" value="charlie@pearbudget.com" />
 		</form>
-		<p id="new_password_trigger">Need to set a new password? Click here.</p>
+		<p id="new_password_trigger" class="linklike">Need to set a new password? Click here.</p>
 		<form action="" id="new_password_form" style="background:#222;-moz-border-radius: 10px;border-radius: 10px;padding:10px 0 28px 60px;">
 			<label class="paired password" style="width:200px">enter your new password</label><input class="labeled password" type="password" value="password" />
 			<label class="paired password">confirm it</label><input class="labeled password" type="password" value="password" />
 			<hr style="padding:0" />
 			<button class="awesome" style="float:right;font-size:14px !important;margin-right:70px;padding:0 10px !important;width:110px;clear:both !important;	">save</button>
-			<div id="new_password_cancel">keep current password</div>
+			<div id="new_password_cancel" class="linklike">keep current password</div>
 		</form>
 		<hr />
 		<h3>A Quick Note Re: Support</h3>
