@@ -49,7 +49,8 @@
 	#accounts_list th{text-align:center;}
 
 	#accounts_list{font-size:20px;margin: 0 auto;text-align:left;}
-	#admin_box{background:#bbc;border:15px solid #eef;padding:20px;position:absolute;top:40px;right:10px;text-align:right;width:450px;-moz-border-radius: 30px;border-radius: 20px;text-align:center}
+	#admin_box{top:40px;right:10px;text-align:right;width:450px;}
+	#colophon{background:#0D0D0F;text-align:left;top:0;left:0;}
 	#delete_account_link{color:#445;cursor:pointer;display:inline;float:right;font-size:10px;line-height:20px;margin:6px 15px;padding:0 5px;text-align:right;-moz-border-radius: 4px;border-radius: 4px;}
 	#delete_account_link:hover{background:#400;color:#fff;}
 	#month_name{background:#0D0D0F;font-size:30px;line-height:50px;margin:0 auto;padding-bottom:4px;text-align:center;width:300px;-moz-border-radius: 15px;border-radius: 15px;}
@@ -70,7 +71,7 @@
 	.edit_and_delete_wrapper:first-child{margin-top:30px;}
 	.edit{display:block;}
 	.exchange{background:#0D0D0F;border:15px solid #445;font-size:30px;line-height:30px;margin:10px 30px;padding:20px;position:relative;text-align:right;width:120px;-moz-border-radius: 30px;border-radius: 20px;}
-	.floating_box{color:#000;display:none;font-size:16px;-moz-box-shadow:0 2px 5px #001;box-shadow:0 10px 10px #fff;}
+	.floating_box{background:#bbc;border:15px solid #eef;color:#000;display:none;padding:20px;position:absolute;text-align:center;-moz-border-radius: 30px;border-radius: 20px;-moz-box-shadow:0 2px 5px #001;box-shadow:0 10px 10px #fff;}
 	.footer{background:#001;border-top:4px solid #bbc;clear:both;margin-top:40px;padding:20px 0;text-align:center;}
 	.head_date{display:inline-block;font-size:16px;margin:0 0 0 -10px;padding:0;text-align:center;}
 	.in{background:#C9DE55;border-color:#7D9100;color:#000}
@@ -332,9 +333,11 @@
 	<div id="new_entry" class="floating_box">
 		<div id="new_step_1" class="floating_box" style="display:block">
 			<p>On [date], I made <input /> from <input /></p>
+			<div class="close linklike">close</div>
 		</div>
 		<div id="new_step_2" class="floating_box" style="display:block">
 			<p>Step 2!!!</p>
+			<div class="close linklike">close</div>
 		</div>
 	</div>
 
@@ -397,10 +400,12 @@
 	<div class="footer">
 		<p><a href="#" id="enable_editing_and_deleting_link">click here to edit (or delete) your entries</a></p>
 	</div>
-	<div id="colophon" style="">
-		<ul>
+	<div id="colophon" class="floating_box">
+		<ul style="padding-left:20px">
 			<li><h3>Text Colors</h3>
 				<ul>
+					<li style="color:#0D0D0F"><span style="background:#778;">#0D0D0F</span></li>
+					<li style="color:#1B1B1F"><span style="background:#778;">#1B1B1F</span></li>
 					<li style="color:#445">#445</li>
 					<li style="color:#778">#778</li>
 					<li style="color:#bbc">#bbc</li>
@@ -418,6 +423,7 @@
 				</ul>
 			</li>
 		</ul>
+		<div class="close linklike">close</div>
 	</div>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 	<script type="text/javascript" src="javascripts/application.js"></script>
