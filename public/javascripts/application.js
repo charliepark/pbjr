@@ -6,3 +6,7 @@ jQuery.fn.onloadEvents = function() {
 jQuery.fn.red = function() {
 	$(this).css('background','red');
 }
+
+$("#new_password_trigger").click(function(){
+	$("#new_password_form").fadeIn();
+});

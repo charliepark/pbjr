@@ -50,6 +50,9 @@
 	#delete_account_link{color:#445;cursor:pointer;display:inline;float:right;font-size:10px;line-height:20px;margin:6px 15px;padding:0 5px;text-align:right;-moz-border-radius: 4px;border-radius: 4px;}
 	#delete_account_link:hover{background:#400;color:#fff;}
 	#month_name{background:#0D0D0F;font-size:30px;line-height:50px;margin:0 auto;padding-bottom:4px;text-align:center;width:380px;-moz-border-radius: 15px;border-radius: 15px;}
+	#new_password_cancel{color:#445;font-size:12px;margin-top:10px;margin-left:-70px;}
+	#new_password_form{display:none;}
+	#new_password_trigger{cursor:pointer;padding:10px;text-align:center;}
 	#new_step_1{background:#0D0D0F;border:15px solid #445;font-size:30px;line-height:30px;padding:20px;position:fixed;top:50%;left:50%;margin-left:-435px;text-align:right;width:800px;-moz-border-radius: 30px;border-radius: 20px;text-align:center}
 	#new_step_2{background:#0D0D0F;border:15px solid #445;font-size:30px;line-height:30px;padding:20px;position:fixed;top:60%;left:50%;margin-left:-435px;text-align:right;width:800px;-moz-border-radius: 30px;border-radius: 20px;text-align:center}
 
@@ -68,7 +71,7 @@
 	.footer{background:#001;border-top:4px solid #bbc;clear:both;margin-top:40px;padding:20px 0;text-align:center;}
 	.head_date{display:inline-block;font-size:16px;margin:0 0 0 -10px;padding:0;text-align:center;}
 	.in{background:#C9DE55;border-color:#7D9100;color:#000}
-	.in_text_link{background:#445;border-bottom:1px solid #fff; color:#bbc;padding:0 4px;-moz-border-radius: 3px;border-radius: 3px;}
+	.in_text_link{background:#222;border-bottom:1px solid #fff; color:#eef;padding:0 4px;-moz-border-radius: 3px;border-radius: 3px;}
 	.input_goal{width:60px;}
 	.input_name{margin-left:2px;width:60px;}
 	.input_percent{padding-right:16px;text-align:right;width:16px;}
@@ -372,18 +375,18 @@
 		<form action="" id="">
 			<label class="paired">e-mail</label><input class="labeled" value="charlie@pearbudget.com" />
 		</form>
-		<p style="text-align:center;padding:10px">Need to set a new password? Click here.</p>
-		<form action="" id="" style="background:#222;-moz-border-radius: 10px;border-radius: 10px;padding:10px 0 28px 60px;">
+		<p id="new_password_trigger">Need to set a new password? Click here.</p>
+		<form action="" id="new_password_form" style="background:#222;-moz-border-radius: 10px;border-radius: 10px;padding:10px 0 28px 60px;">
 			<label class="paired password" style="width:200px">enter your new password</label><input class="labeled password" type="password" value="password" />
 			<label class="paired password">confirm it</label><input class="labeled password" type="password" value="password" />
 			<hr style="padding:0" />
 			<button class="awesome" style="float:right;font-size:14px !important;margin-right:70px;padding:0 10px !important;width:110px;clear:both !important;	">save</button>
-			<div style="color:#445;font-size:12px;margin-top:12px;margin-left:-160px;">cancel</div>
+			<div id="new_password_cancel">keep current password</div>
 		</form>
 		<hr />
 		<h3>A Quick Note Re: Support</h3>
-		<p style="font-size:12px;padding-left:10px;">PearBudget Junior is a great way to teach kids about money and finance. Odds are good, though, that you don&rsquo;t have a good system of your own for setting spending goals and then seeing how you&rsquo;re doing. PearBudget &mdash; the regular one, not the Junior version &mdash; is a great way to do just that. We make it easy to get started, even if you&rsquo;ve never set up a &ldquo;real&rdquo; budget before. And our customer service is <em>awesome</em>.</p>
-		<p style="font-size:12px;padding-top:10px;padding-left:10px;">You can get a PearBudget account setup with a free 30-day trial. There&rsquo;s no commitment, and you don&rsquo;t even need to enter your credit card info to try it out. Come on over. It's at <a class="in_text_link" href="https://www.pearbudget.com/?src=pbjr">pearbudget.com</a>.</p>
+		<p style="font-size:12px;padding-left:10px;">PearBudget Junior is the "for kids" version of <a class="in_text_link" href="https://www.pearbudget.com/?src=pbjr">pearbudget.com</a>, a really simple expense tracking / budgeting program used by thousands of people around the world, and praised on blogs, in newspaper articles, and on tv.</p>
+		<p style="font-size:12px;padding-top:10px;padding-left:10px;">You can get started with a free 30-day trial, and after that, it costs less than a latte a month. There&rsquo;s no commitment, and you don&rsquo;t even need to enter your credit card info to try it out. Come on over. It's at <a class="in_text_link" href="https://www.pearbudget.com/?src=pbjr">pearbudget.com</a>.</p>
 	</div>
 
 	<div class="footer">
