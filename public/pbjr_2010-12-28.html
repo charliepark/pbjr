@@ -43,6 +43,7 @@
 	#accounts_list td{font-size:16px;line-height:24px;text-align:center;width:100px}
 	#accounts_list td.accounts_saving{width:120px;}
 	#accounts_list td.accounts_giving{width:80px;}
+	#accounts_list td.accounts_go{width:50px;}
 	#accounts_list th{text-align:center;}
 
 	#accounts_list{font-size:20px;margin: 0 auto;text-align:left;}
@@ -52,12 +53,12 @@
 	#month_name{background:#0D0D0F;font-size:30px;line-height:50px;margin:0 auto;padding-bottom:4px;text-align:center;width:380px;-moz-border-radius: 15px;border-radius: 15px;}
 	#new_password_cancel{color:#445;font-size:12px;margin-top:10px;margin-left:-70px;}
 	#new_password_form{display:none;}
-	#new_password_trigger{padding:10px;text-align:center;}
+	#new_password_trigger{font-size:12px;padding:10px;text-align:center;}
 	#new_step_1{background:#0D0D0F;border:15px solid #445;font-size:30px;line-height:30px;padding:20px;position:fixed;top:50%;left:50%;margin-left:-435px;text-align:right;width:800px;-moz-border-radius: 30px;border-radius: 20px;text-align:center}
 	#new_step_2{background:#0D0D0F;border:15px solid #445;font-size:30px;line-height:30px;padding:20px;position:fixed;top:60%;left:50%;margin-left:-435px;text-align:right;width:800px;-moz-border-radius: 30px;border-radius: 20px;text-align:center}
 
 
-
+	.close{color:#bbc;position:absolute;top:0;right:0;padding:0 10px;text-align:right;width:auto;}
 	.col_head{font-size:20px;padding-top:10px;text-align:center}
 	.date{color:#bbc;font-size:14px;margin:0 20px 0 0px;padding-top:35px;text-align:center;text-transform:uppercase;width:160px;}
 	.date_day_name{}
@@ -234,7 +235,7 @@
 <body>
 	<h1 class="page_header with_subhead">PearBudget Junior</h1>
 	<h1 class="page_sub_head">Emily&rsquo;s Account</h1>
-	<ul id="nav" class="nav"><li><a href="">need help?</a></li><li><a href="">home</a></li><!-- only "home" if more than one child listed --><li><a href="">admin</a></li><li><a href="">sign out</a></li></ul>
+	<ul id="nav" class="nav"><li><a href="">need help?</a></li><li><a href="">home</a></li><!-- only "home" if more than one child listed --><li><a href="admin_box" class="popup_trigger">admin</a></li><li><a href="">sign out</a></li></ul>
 	<h2 id="month_name"><a href="" class="month_nav">&laquo;</a> November <a href="" class="month_nav">&raquo;</a></h2>
 	<table class="ledger">
 		<thead>
@@ -334,7 +335,7 @@
 		</div>
 	</div>
 
-	<div id="admin_box" class="floating_box">
+	<div id="admin_box" class="floating_box" style="display:none">
 		<div class="" style="border:10px solid transparent;border-bottom:10px solid #445;height:1px;width:1px;position:relative;right:92px;float:right;top:-55px;"></div>
 		<h3>Accounts</h3>
 		<table id="accounts_list">
@@ -351,19 +352,19 @@
 					<td><input type="text" class="input_name" value="Lucy" /></td>
 					<td><input type="checkbox" checked="checked"/></td>
 					<td class="accounts_saving"><input type="checkbox" checked="checked"/><input type="text" class="input_goal" placeholder="goal" value="saving" /></td>
-					<td class="accounts_giving"><input type="checkbox" checked="checked"/><span class="input_percent_wrapper"><input type="text" value="10" class="input_percent" /></span></td>
+					<td class="accounts_giving"><input type="checkbox" checked="checked"/><span class="input_percent_wrapper"><input type="text" value="10" class="input_percent" /></span></td><td class="accounts_go"><a href="lucy">go</td>
 				</tr>
 				<tr>
 					<td><input type="text" class="input_name" value="Kate" /></td>
 					<td><input type="checkbox" checked="checked"/></td>
 					<td class="accounts_saving"><input type="checkbox" checked="checked"/><input type="text" class="input_goal" placeholder="goal" value="saving" /></td>
-					<td class="accounts_giving"><input type="checkbox" checked="checked"/><span class="input_percent_wrapper"><input type="text" value="10" class="input_percent" /></span></td>
+					<td class="accounts_giving"><input type="checkbox" checked="checked"/><span class="input_percent_wrapper"><input type="text" value="10" class="input_percent" /></span></td><td class="accounts_go"><a href="kate">go</td>
 				</tr>
 				<tr>
 					<td><input type="text" class="input_name" value="Frances" /></td>
 					<td><input type="checkbox" checked="checked"/></td>
 					<td class="accounts_saving"><input type="checkbox" checked="checked"/><input type="text" class="input_goal" placeholder="goal" value="saving" /></td>
-					<td class="accounts_giving"><input type="checkbox" checked="checked"/><span class="input_percent_wrapper"><input type="text" value="10" class="input_percent" /></span></td>
+					<td class="accounts_giving"><input type="checkbox" checked="checked"/><span class="input_percent_wrapper"><input type="text" value="10" class="input_percent" /></span></td><td class="accounts_go"><a href="frances">go</td>
 				</tr>
 				<tr>
 					<td><div id="" class="awesome small" style="font-size:10px !important;height:20px;line-height:20px !important;margin:5px auto 0 !important;padding:0 !important;width:70px;">add a child</div></td>
@@ -377,16 +378,16 @@
 		</form>
 		<p id="new_password_trigger" class="linklike">Need to set a new password? Click here.</p>
 		<form action="" id="new_password_form" style="background:#222;-moz-border-radius: 10px;border-radius: 10px;padding:10px 0 28px 60px;">
-			<label class="paired password" style="width:200px">enter your new password</label><input class="labeled password" type="password" value="password" />
-			<label class="paired password">confirm it</label><input class="labeled password" type="password" value="password" />
+			<label class="paired password" style="width:200px">enter your new password</label><input class="labeled password" />
+			<label class="paired password">confirm it</label><input class="labeled password" />
 			<hr style="padding:0" />
 			<button class="awesome" style="float:right;font-size:14px !important;margin-right:70px;padding:0 10px !important;width:110px;clear:both !important;	">save</button>
 			<div id="new_password_cancel" class="linklike">keep current password</div>
 		</form>
 		<hr />
 		<h3>A Quick Note Re: Support</h3>
-		<p style="font-size:12px;padding-left:10px;">PearBudget Junior is the "for kids" version of <a class="in_text_link" href="https://www.pearbudget.com/?src=pbjr">pearbudget.com</a>, a really simple expense tracking / budgeting program used by thousands of people around the world, and praised on blogs, in newspaper articles, and on tv.</p>
-		<p style="font-size:12px;padding-top:10px;padding-left:10px;">You can get started with a free 30-day trial, and after that, it costs less than a latte a month. There&rsquo;s no commitment, and you don&rsquo;t even need to enter your credit card info to try it out. Come on over. It's at <a class="in_text_link" href="https://www.pearbudget.com/?src=pbjr">pearbudget.com</a>.</p>
+		<p style="font-size:12px;padding-left:10px;">PearBudget Junior is available for free because of the thousands of happy people using the grown-up version of <a class="in_text_link" href="https://www.pearbudget.com/?src=pbjr">PearBudget</a>. If <em>you&rsquo;d</em> like a really simple and easy-to-use budgeting tool, you should check it out. There&rsquo;s no commitment, and you don&rsquo;t even need to enter your credit card info to try it out. Come on over. It's at <a class="in_text_link" href="https://www.pearbudget.com/?src=pbjr">pearbudget.com</a>.</p>
+		<div class="close linklike">close</div>
 	</div>
 
 	<div class="footer">
