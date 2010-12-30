@@ -70,6 +70,10 @@
 	.edit_and_delete_wrapper{background:#112;border:5px solid #334;color:#445;display:block;font-size:10px;line-height:20px;margin:4px auto;text-align:center;visibility:hidden;width:90px;-moz-border-radius: 10px;border-radius: 10px;}
 	.edit_and_delete_wrapper:first-child{margin-top:30px;}
 	.edit{display:block;}
+	.event td{background:rgba(255,255,255,0.05);}
+	.event td:first-child{-moz-border-radius: 10px 0 0 10px;border-radius: 10px 0 0 10px;}
+	.event td:last-child{-moz-border-radius: 0 10px 10px 0;border-radius: 0 10px 10px 0;}
+	.event.total td{background:none}
 	.exchange{background:#0D0D0F;border:15px solid #445;font-size:30px;line-height:30px;margin:10px 30px;padding:20px;position:relative;text-align:right;width:120px;-moz-border-radius: 30px;border-radius: 20px;}
 	.floating_box{background:#bbc;border:15px solid #eef;color:#000;display:none;padding:20px;position:absolute;text-align:center;-moz-border-radius: 30px;border-radius: 20px;-moz-box-shadow:0 2px 5px #001;box-shadow:0 10px 10px #fff;}
 	.footer{background:#001;border-top:4px solid #bbc;clear:both;margin-top:40px;padding:20px 0;text-align:center;}
@@ -251,13 +255,13 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr class="event">
+			<tr class="event total">
 				<td><div class="date">At the start of November</div><p class="total">$14.00</p></td>
 				<td><div class="exchange"><span class="amount">$9.00</span><!--<p class="note">from thing</p>--></div></td>
 				<td><div class="exchange"><span class="amount">$4.00</span></div></td>
 				<td><div class="exchange"><span class="amount">$1.00</span></div></td>
 			</tr>
-			<tr class="event" style="background:#222">
+			<tr class="event">
 				<td><div class="date"><span class="date_day_name">Saturday</span> <span class="date_month_name">Nov.</span> <span class="date_day_number">6</span></div><p class="note">allowance</p><p class="total">+ $10.00</p></td>
 				<td><div class="exchange in"><span class="amount">$5.00</span></div></td>
 				<td><div class="exchange in"><span class="amount">$4.00</span></div></td>
@@ -269,22 +273,26 @@
 				<td><div class="running_total">$14.00</div></td>
 				<td><div class="running_total">$8.00</div></td>
 				<td><div class="running_total">$2.00</div></td>
+				<td></td>
 			</tr>
-			<tr class="event" style="background:#222">
+			<tr class="event">
 				<td><div class="date"><span class="date_day_name">Saturday</span> <span class="date_month_name">Nov.</span> <span class="date_day_number">13</span></div><p class="note">allowance</p><p class="total">+ $10.00</p></td>
 				<td><div class="exchange in"><span class="amount">$5.00</span></div></td>
 				<td><div class="exchange in"><span class="amount">$4.00</span></div></td>
 				<td><div class="exchange in"><span class="amount">$1.00</span></div></td>
+				<td></td>
 			</tr>
 			<tr>
 				<td></td>
 				<td><div class="running_total">$19.00</div></td>
 				<td><div class="running_total">$12.00</div></td>
 				<td><div class="running_total">$3.00</div></td>
+				<td></td>
 			</tr>
-			<tr class="event" style="background:#222">
+			<tr class="event">
 				<td><div class="date"><span class="date_day_name">Saturday</span> <span class="date_month_name">Nov.</span> <span class="date_day_number">13</span></div><p class="note">bead kit</p><p class="total">- $12.81</p></td>
 				<td><div class="exchange out"><span class="amount">$12.81</span></div></td>
+				<td></td>
 				<td></td>
 				<td></td>
 			</tr>
@@ -293,12 +301,14 @@
 				<td><div class="running_total">$6.19</div></td>
 				<td><div class="running_total">$12.00</div></td>
 				<td><div class="running_total">$3.00</div></td>
+				<td></td>
 			</tr>
-			<tr class="event" style="background:#222">
+			<tr class="event">
 				<td><div class="date"><span class="date_day_name">Sunday</span> <span class="date_month_name">Nov.</span> <span class="date_day_number">14</span></div><p class="note">church tithe</p><p class="total">- $3.00</p></td>
 				<td></td>
 				<td></td>
 				<td><div class="exchange out"><span class="amount">$3.00</span></div></td>
+				<td></td>
 			</tr>
 			<tr>
 				<td></td>
@@ -320,7 +330,7 @@
 					<th scope="col"><div class="col_head head_giving">Giving</div></th>
 				</tr>
 				
-				<tr class="event">
+				<tr class="event total">
 					<td><div class="date">Currently Available</div><p class="total">$18.19</p></td>
 					<td><div class="exchange"><span class="amount">$6.19</span></div></td>
 					<td><div class="exchange"><span class="amount">$12.00</span></div></td>
