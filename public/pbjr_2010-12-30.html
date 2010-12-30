@@ -54,7 +54,7 @@
 	#delete_account_link{color:#445;cursor:pointer;display:inline;float:right;font-size:10px;line-height:20px;margin:6px 15px;padding:0 5px;text-align:right;-moz-border-radius: 4px;border-radius: 4px;}
 	#delete_account_link:hover{background:#400;color:#fff;}
 	#month_name{background:#0D0D0F;background:rgba(0,0,0,0.5);font-size:30px;line-height:50px;margin:0 auto;padding-bottom:4px;text-align:center;width:300px;-moz-border-radius: 15px;border-radius: 15px;}
-	#new_password_cancel{color:#445;font-size:12px;margin-top:10px;margin-left:-70px;}
+	#new_password_cancel{color:#445;font-size:12px;margin-top:10px;margin-left:4px;text-align:left}
 	#new_password_form{color:#eef;display:none;}
 	#new_password_trigger{font-size:12px;padding:10px;text-align:center;}
 	#new_step_1{background:#0D0D0F;background:rgba(0,0,0,0.5);border:15px solid #445;font-size:30px;line-height:30px;padding:20px;position:fixed;top:20%;left:50%;margin-left:-435px;text-align:right;width:800px;-moz-border-radius: 30px;border-radius: 20px;text-align:center}
@@ -103,6 +103,8 @@
 	.subdued{color:#556}
 	.table_footer{border-top:4px solid rgba(255,255,255,0.1)}
 	.total{color:#778;font-size:14px;height:18px;margin:0 20px 0 0;overflow:hidden;text-align:center;text-transform:none}
+	.total_cue{color:#445;line-height:30px;padding-right:20px;text-align:center;visibility:hidden}
+	tr:hover .total_cue{visibility:visible}
 	.total_col{border-left:4px solid rgba(255,255,255,0.1)}
 	#nav{position:absolute;top:10px;right:0;}
 	.nav li{display:inline;margin:10px 0;border-left:1px solid #445;}
@@ -269,7 +271,7 @@
 				<td><div class="edit_and_delete_wrapper"><a href="" class="edit">edit this row</a></div><div class="edit_and_delete_wrapper"><a href="" class="delete">delete</a> this row</div></td>
 			</tr>
 			<tr>
-				<td></td>
+				<td class="total_cue">Running Total:</td>
 				<td><div class="running_total">$14.00</div></td>
 				<td><div class="running_total">$8.00</div></td>
 				<td><div class="running_total">$2.00</div></td>
@@ -283,7 +285,7 @@
 				<td></td>
 			</tr>
 			<tr>
-				<td></td>
+				<td class="total_cue">Running Total:</td>
 				<td><div class="running_total">$19.00</div></td>
 				<td><div class="running_total">$12.00</div></td>
 				<td><div class="running_total">$3.00</div></td>
@@ -297,7 +299,7 @@
 				<td></td>
 			</tr>
 			<tr>
-				<td></td>
+				<td class="total_cue">Running Total:</td>
 				<td><div class="running_total">$6.19</div></td>
 				<td><div class="running_total">$12.00</div></td>
 				<td><div class="running_total">$3.00</div></td>
@@ -311,7 +313,7 @@
 				<td></td>
 			</tr>
 			<tr>
-				<td></td>
+				<td class="total_cue">Running Total:</td>
 				<td><div class="running_total">$6.19</div></td>
 				<td><div class="running_total">$12.00</div></td>
 				<td><div class="running_total">$0.00</div></td>
