@@ -60,27 +60,25 @@
 	#new_step_1{background:#0D0D0F;border:15px solid #445;font-size:30px;line-height:30px;padding:20px;position:fixed;top:20%;left:50%;margin-left:-435px;text-align:right;width:800px;-moz-border-radius: 30px;border-radius: 20px;text-align:center}
 	#new_step_2{background:#0D0D0F;border:15px solid #445;font-size:30px;line-height:30px;padding:20px;position:fixed;top:30%;left:50%;margin-left:-435px;text-align:right;width:800px;-moz-border-radius: 30px;border-radius: 20px;text-align:center}
 	#now_title{margin-bottom:20px}
-	#now_table .amount{color:#eef}
-	#now_table .date{color:#eef}
 
-	.close{color:#445;position:absolute;top:0;right:0;padding:0 10px;text-align:right;width:auto;}
 	.col_head{font-size:20px;padding-top:10px;text-align:center}
-	.date{color:#bbc;font-size:14px;margin:0 20px 0 0px;padding-top:35px;text-align:center;text-transform:uppercase;width:160px;}
+	div.date{color:#bbc;font-size:14px;margin:0;padding-top:35px;text-align:center;text-transform:uppercase;width:160px;}
+	div.current_box div.date{padding-top:15px;}
+
 	.date_day_name{}
 	.date_month_name{}
 
-	.edit_and_delete_wrapper{background:#112;border:5px solid #334;color:#445;display:block;font-size:10px;line-height:20px;margin:4px auto;text-align:center;visibility:hidden;width:90px;-moz-border-radius: 10px;border-radius: 10px;}
-	.edit_and_delete_wrapper:first-child{margin-top:30px;}
-	.edit{display:block;}
-	.event td{background:rgba(255,255,255,0.05);}
-	.event td:first-child{-moz-border-radius: 10px 0 0 10px;border-radius: 10px 0 0 10px;}
-	.event td:last-child{-moz-border-radius: 0 10px 10px 0;border-radius: 0 10px 10px 0;}
-	.event.total td{background:none}
-	.exchange{background:#0D0D0F;border:15px solid #445;font-size:30px;line-height:30px;margin:10px 30px;padding:20px;position:relative;text-align:right;width:120px;-moz-border-radius: 30px;border-radius: 20px;}
+	a.edit{display:block;}
+	td{text-align:center}
+	tr.event td{background:rgba(255,255,255,0.05);}
+	tr.event td:first-child{-moz-border-radius: 10px 0 0 10px;border-radius: 10px 0 0 10px;}
+	tr.event td:last-child{-moz-border-radius: 0 10px 10px 0;border-radius: 0 10px 10px 0;}
+	tr.event.total td{background:none}
+
 	.floating_box{background:#bbc;border:15px solid #eef;color:#000;display:none;padding:20px;position:absolute;text-align:center;-moz-border-radius: 30px;border-radius: 20px;-moz-box-shadow:0 2px 5px #001;box-shadow:0 10px 10px #fff;}
 	.footer{background:#001;border-top:4px solid #bbc;clear:both;margin-top:40px;padding:20px 0;text-align:center;}
 	.head_date{display:inline-block;font-size:16px;margin:0 0 0 -10px;padding:0;text-align:center;}
-	.in{background:#C9DE55;border-color:#7D9100;color:#000}
+	div.exchange.in{background:#C9DE55;border-color:#7D9100;color:#000}
 	a.in_text_link{background:#222;border-bottom:1px solid #fff; color:#eef;padding:0 4px;-moz-border-radius: 3px;border-radius: 3px;}
 	.floating_box a.in_text_link:hover{color:#eef}
 	.input_goal{width:60px;}
@@ -88,15 +86,14 @@
 	.input_percent{padding-right:16px;text-align:right;width:16px;}
 	.input_percent_wrapper{position:relative;}
 	.input_percent_wrapper:after{content:"%";font-size:12px;position:relative;left:-15px;color:#445}
-	.in span:before, 	.out span:before{color:#7D9100;content:"+";font-size:60px;line-height:70px;opacity:.5;position:absolute;top:0;left:10px}
-	.out span:before{color:coral;content:"-";line-height:62px;opacity:.8}
-	.ledger{margin:0 auto;}
+	div.exchange.in span:before, 	div.exchange.out span:before{color:#7D9100;content:"+";font-size:60px;line-height:70px;opacity:.5;position:absolute;top:0;left:10px}
+	div.exchange.out span:before{color:coral;content:"-";line-height:62px;opacity:.8}
 	.link_highlight{color:#eef}
 	.linklike{cursor:pointer}
 	.month_nav{position:relative;top:-2px}
-	.note{color:#778;font-size:14px;height:18px;margin:0 20px 0 0;overflow:hidden;text-align:center;text-transform:none}
+	.note{color:#778;font-size:14px;height:18px;margin:0;overflow:hidden;text-align:center;text-transform:none}
 	.new{cursor:pointer;width:550px;text-align:center}
-	.out{background:#F2DA91;border-color:coral;color:#000}
+	div.exchange.out{background:#F2DA91;border-color:coral;color:#000}
 	.page_header{font-size:40px;line-height:40px;padding:40px 0;text-align:center;}
 	.page_header.with_subhead{padding-bottom:0}
 	.page_sub_head{color:#bbc;font-size:30px;line-height:30px;padding:10px 0 20px 0;text-align:center;}
@@ -105,8 +102,8 @@
 	.subdued{color:#556}
 	.table_title{background:#0D0D0F;font-size:30px;line-height:50px;margin:0 auto;padding-bottom:4px;text-align:center;width:300px;-moz-border-radius: 15px;border-radius: 15px;}
 	.table_footer{border-top:4px solid rgba(255,255,255,0.1)}
-	.total{color:#778;font-size:14px;height:18px;margin:0 20px 0 0;overflow:hidden;text-align:center;text-transform:none}
-	.total_cue{color:#445;line-height:30px;padding-right:20px;text-align:center;visibility:hidden}
+	.total{color:#778;font-size:14px;height:18px;margin:0;overflow:hidden;text-align:center;text-transform:none}
+	.total_cue{color:#445;line-height:30px;text-align:center;visibility:hidden}
 	tr:hover .total_cue{visibility:visible}
 	.total_col{border-left:4px solid rgba(255,255,255,0.1)}
 	#nav{position:absolute;top:10px;right:0;}
@@ -114,13 +111,49 @@
 	.nav li:first-child{border:0;}
 	.nav li a{color:#778;padding:20px;}
 	.nav li a:hover{color:#bbc}
+
+	p.total{position:relative;left:-3px}
+
+	#now_table span.amount{color:#eef}
+	#now_table div.date{color:#000}
+	#now_table p.total{color:#445}
+
+
+	div#colophon{color:#778}
+	div.bottom{padding:10px 0}	
+	div.close{color:#445;position:absolute;top:0;right:0;padding:0 10px;text-align:right;width:auto;}
+	div.current_box{color:#000}
+	div.edit_and_delete_wrapper{color:#445;display:block;font-size:10px;line-height:20px;margin:4px auto;text-align:center;visibility:visible;}
+	div.edit_and_delete_wrapper:first-child{margin-top:30px;}
 	
-	#colophon{color:#778}
-	#colophon h3{color:#eef;font-size:20px;margin-top:20px;}
+	div.exchange{background:#0D0D0F;border:15px solid #445;font-size:30px;line-height:30px;margin:10px auto;padding:20px;position:relative;text-align:right;width:120px;-moz-border-radius: 30px;border-radius: 20px;}
+	div.current_box div.exchange{margin:0 auto}
+
+	div#ledger_wrapper{background:#bbc;border:15px solid #eef;margin: 0 auto;width:1030px;-moz-border-radius: 30px;border-radius: 30px;}
+	div#review_wrapper{background:#222;margin:0 auto;padding-top:10px;width:1000px}
+	
+	div.words{font-size:16px;line-height:15px;margin-top:50px;padding:0;text-align:center}
+	div.words a{display:block;padding:16px 20px}
+
+	
+	div#colophon h3{color:#eef;font-size:20px;margin-top:20px;}
 
 
+	li{}
+	ul#nav_actions{margin:0 auto;padding-left:160px;width:900px}
+
+	table.ledger{margin:0 auto;}
 
 
+	td.td_amount{width:250px;}
+	td.td_event{width:50px;}
+	td.td_action{width:90px;}
+
+
+	ul#nav_actions li{display:table-cell;margin:0;padding:0;width:300px;}
+	ul#nav_actions li + li{background:yellow}
+	ul#nav_actions li + li + li{background:red}
+	
 
 
 	/*
@@ -250,41 +283,54 @@
 	<h1 class="page_sub_head">Lucy&rsquo;s Account</h1>
 	<ul id="nav" class="nav"><li><a href="">need help?</a></li><li><a href="">home</a></li><!-- only "home" if more than one child listed --><li><a href="admin_box" class="popup_trigger">admin</a></li><li><a href="">sign out</a></li></ul>
 	<h2 class="table_title" id="now_title">Now</h2>
+
+	<div id="ledger_wrapper">
 	<table id="now_table" class="ledger">
 		<thead style="">
 			<tr>
-				<th scope="col"><div class="col_head" style="background:#778;border:15px solid #eef;border-width:15px 0 0 15px;-moz-border-radius: 30px 0 0 0;border-radius: 30px 0 0 0;">&nbsp;</div></th>
-				<th scope="col" style=""><div class="col_head head_spending" style="background:#778;border:15px solid #eef;border-width:15px 0 0;">Spending</div></th>
-				<th scope="col"><div class="col_head head_saving" style="background:#778;border:15px solid #eef;border-width:15px 0 0;">Saving</div></th>
-				<th scope="col"><div class="col_head head_giving" style="background:#778;border:15px solid #eef;border-width:15px 0 0;">Giving</div></th>
-				<th scope="col"><div class="col_head" style="background:#778;border:15px solid #eef;border-width:15px 15px 0 0;-moz-border-radius: 0 30px 0 0;border-radius: 0 30px 0 0;width:90px">&nbsp;</div></th>
-			</tr>				
-			<tr class="event total">
-				<td><div class="date">Currently Available</div><p class="total">$18.19</p></td>
-				<td><div class="exchange"><span class="amount">$6.19</span></div></td>
-				<td><div class="exchange"><span class="amount">$12.00</span></div></td>
-				<td><div class="exchange"><span class="amount">$0.00</span></div></td>
-				<td></td>
-			</tr>
-		</thead>
-	</table>
-	<h2 class="table_title" id="month_name"><a href="" class="month_nav">&laquo;</a> November <a href="" class="month_nav">&raquo;</a></h2>
-	<table class="ledger">
-		<thead>
-			<tr>
-				<th scope="col"></th>
-				<th scope="col"><h3 class="col_head head_spending">Spending</h3></th>
-				<th scope="col"><h3 class="col_head head_saving">Saving</h3></th>
-				<th scope="col"><h3 class="col_head head_giving">Giving</h3></th>
-				<th scope="col" style="width:90px"></th>
+				<th scope="col"><div class="current_box top left col_head">&nbsp;</div></th>
+				<th scope="col" style=""><div class="current_box top col_head head_spending">Spending</div></th>
+				<th scope="col"><div class="current_box top col_head head_saving">Saving</div></th>
+				<th scope="col"><div class="current_box top col_head head_giving">Giving</div></th>
+				<th scope="col"><div class="current_box top right col_head">&nbsp;</div></th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr class="event total">
-				<td><div class="date">At the start of<br />November</div><p class="total">$14.00</p></td>
-				<td><div class="exchange"><span class="amount">$9.00</span><!--<p class="note">from thing</p>--></div></td>
-				<td><div class="exchange"><span class="amount">$4.00</span></div></td>
-				<td><div class="exchange"><span class="amount">$1.00</span></div></td>
+				<td class="td_event"><div class="current_box bottom left"><div class="date">Currently Available</div><p class="total">$18.19</p></td>
+				<td class="td_amount"><div class="current_box bottom"><div class="exchange"><span class="amount">$6.19</span></div></td>
+				<td class="td_amount"><div class="current_box bottom"><div class="exchange"><span class="amount">$12.00</span></div></td>
+				<td class="td_amount"><div class="current_box bottom"><div class="exchange"><span class="amount">$0.00</span></div></td>
+				<td class="td_action"><div class="current_box bottom right"></div></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+	<ul id="nav_actions">
+		<li class="nav_action money_in"><div class="words exchange in new"><a href="new_entry" class="popup_trigger">record money in</a></div></li>
+		<li class="nav_action review"><div class="words exchange">review November</div></li>
+		<li class="nav_action money_out"><div class="words exchange out new"><a href="new_entry" class="popup_trigger">record money out</a></div></li>
+	</ul>
+
+	<div id="review_wrapper">
+	<h2 class="table_title" id="month_name"><a href="" class="month_nav">&laquo;</a> November <a href="" class="month_nav">&raquo;</a></h2>
+	<table class="ledger">
+		<thead>
+			<tr>
+				<th class="event_col" scope="col"></th>
+				<th class="amount_col" scope="col"><h3 class="col_head head_spending">Spending</h3></th>
+				<th class="amount_col" scope="col"><h3 class="col_head head_saving">Saving</h3></th>
+				<th class="amount_col" scope="col"><h3 class="col_head head_giving">Giving</h3></th>
+				<th class="action_col" scope="col"></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class="event total">
+				<td class="td_event"><div class="date">At the start of<br />November</div><p class="total">$14.00</p></td>
+				<td class="td_amount"><div class="exchange"><span class="amount">$9.00</span><!--<p class="note">from thing</p>--></div></td>
+				<td class="td_amount"><div class="exchange"><span class="amount">$4.00</span></div></td>
+				<td class="td_amount"><div class="exchange"><span class="amount">$1.00</span></div></td>
+				<td class="td_action"></td>
 			</tr>
 			<tr class="event">
 				<td><div class="date"><span class="date_day_name">Saturday</span> <span class="date_month_name">Nov.</span> <span class="date_day_number">6</span></div><p class="note">allowance</p><p class="total">+ $10.00</p></td>
@@ -341,14 +387,6 @@
 				<td><div class="running_total">$12.00</div></td>
 				<td><div class="running_total">$0.00</div></td>
 			</tr>
-			<tr>
-				<td></td>
-				<td colspan="3"><div class="exchange in new"><a href="new_entry" class="popup_trigger">record money in</a></div></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td colspan="3"><div class="exchange out new"><a href="new_entry" class="popup_trigger">record money out</a></div></td>
-			</tr>
 		</tbody>
 		<tfoot>
 			<tr class="table_footer">
@@ -368,6 +406,7 @@
 			</tr>
 		</tfoot>
 	</table>
+</div><!-- #review_wrapper -->
 
 	<div id="new_entry" class="floating_box">
 		<div id="new_step_1" class="floating_box" style="display:block">
