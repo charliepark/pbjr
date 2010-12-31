@@ -25,6 +25,23 @@ $(".popup_trigger").click(function(e){
 	$("#"+box).fadeIn();
 });
 
-$("#tab_details").click(function(){
-	$("#review_wrapper").slideDown();
-});
+$("#tab_details")
+	.hover(function(){
+		$(this).animate({
+			paddingTop: "10px"
+		}, 100);
+	}, function(){
+		$(this).animate({
+			paddingTop: "5px"
+		}, 100);
+	})
+	.click(function(e){
+		if($(this).hasClass("showing")){
+			$("#review_wrapper").slideUp();
+			$(this).addClass("hiding").removeClass("showing");
+		} else {
+			$("#review_wrapper").slideDown();
+			$(this).addClass("showing").removeClass("hiding");
+		}
+	});
+

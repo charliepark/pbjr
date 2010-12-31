@@ -49,7 +49,7 @@
 	#accounts_list th{text-align:center;}
 
 	#accounts_list{font-size:20px;margin: 0 auto;text-align:left;}
-	#admin_box{top:40px;right:10px;text-align:right;width:450px;}
+	div#admin_box{top:40px;right:10px;text-align:right;width:450px;}
 	#colophon{background:#0D0D0F;text-align:left;top:0;left:0;}
 	#delete_account_link{color:#445;cursor:pointer;display:inline;float:right;font-size:10px;line-height:20px;margin:6px 15px;padding:0 5px;text-align:right;-moz-border-radius: 4px;border-radius: 4px;}
 	#delete_account_link:hover{background:#400;color:#fff;}
@@ -75,7 +75,7 @@
 	tr.event td:last-child{-moz-border-radius: 0 10px 10px 0;border-radius: 0 10px 10px 0;}
 	tr.event.total td{background:none}
 
-	.floating_box{background:#bbc;border:15px solid #eef;color:#000;display:none;padding:20px;position:absolute;text-align:center;-moz-border-radius: 30px;border-radius: 20px;-moz-box-shadow:0 2px 5px #001;box-shadow:0 10px 10px #fff;}
+	.floating_box{background:#bbc;border:15px solid #eef;color:#000;display:none;padding:20px;position:absolute;text-align:center;z-index:99;-moz-border-radius: 30px;border-radius: 20px;-moz-box-shadow:0 2px 5px #001;box-shadow:0 10px 10px #fff;}
 	.footer{background:#001;border-top:4px solid #bbc;clear:both;margin-top:40px;padding:20px 0;text-align:center;}
 	.head_date{display:inline-block;font-size:16px;margin:0 0 0 -10px;padding:0;text-align:center;}
 	div.exchange.in{background:#C9DE55;border-color:#7D9100;color:#000}
@@ -130,7 +130,8 @@
 	div#review_wrapper{background:#223;display:none;margin:0 auto;padding-top:1px;width:1010px;-moz-box-shadow:0 2px 5px #111;box-shadow:0 1px 5px #000;-moz-border-radius: 0 0 20px 20px;border-radius: 0 0 20px 20px;}
 
 	div#tab_details{background:#778;border:10px solid #bbc;border-top-width:0;color:#eef;cursor:pointer;margin:0 auto 0 -500px;padding:5px 0;position:relative;left:50%;text-align:center;width:300px;-moz-border-radius:  0 0 20px 20px;border-radius: 0 0 20px 20px;-moz-box-shadow:inset 0 1px 3px #445,0 2px 10px #000;}
-	div#tab_details:hover{padding-top:10px;}
+	div#tab_add_income{background:#778;border:10px solid #bbc;border-top-width:0;color:#eef;cursor:pointer;margin:0 auto 0 -500px;padding:5px 0;position:relative;left:50%;text-align:center;width:300px;-moz-border-radius:  0 0 20px 20px;border-radius: 0 0 20px 20px;-moz-box-shadow:inset 0 1px 3px #445,0 2px 10px #000;}
+	div#tab_add_expense{background:#778;border:10px solid #bbc;border-top-width:0;color:#eef;cursor:pointer;margin:0 auto 0 0px;padding:5px 0;position:relative;left:50%;text-align:center;width:300px;-moz-border-radius:  0 0 20px 20px;border-radius: 0 0 20px 20px;-moz-box-shadow:inset 0 1px 3px #445,0 2px 10px #000;}
 	
 	div.bottom{padding:10px 0}	
 	div.close{color:#445;position:absolute;top:0;right:0;padding:0 10px;text-align:right;width:auto;}
@@ -147,13 +148,12 @@
 	h3{}
 	div#colophon h3{color:#eef;font-size:20px;margin-top:20px;}
 
-
 	li{}
-	ul#nav_actions li{margin:0;padding:0;position:absolute;top:0;right:0;width:300px;}
+	ul#nav_actions li{margin:0;padding:0;position:absolute;bottom:0;right:0;width:300px;}
 	ul#nav_actions li + li{background:yellow}
 	ul#nav_actions li + li + li{background:red}
 
-
+	p#enable_editing_and_deleting_link_wrapper{text-align:center;padding:30px 0 10px}
 
 	table.ledger{margin:0 auto;}
 
@@ -163,6 +163,12 @@
 	td.td_action{width:90px;}
 
 	ul#nav_actions{margin:0 auto;padding-left:160px;width:900px}	
+
+	span.subdued{color:#445;}
+	.showing .show_when_hiding{display:none}
+	.showing .show_when_showing{display:inline}
+	.hiding .show_when_hiding{display:inline}
+	.hiding .show_when_showing{display:none}
 
 
 	/*
@@ -298,7 +304,7 @@
 			<tr>
 				<th scope="col"><div class="current_box top left col_head">&nbsp;</div></th>
 				<th scope="col" style=""><div class="current_box top col_head head_spending">Spending</div></th>
-				<th scope="col"><div class="current_box top col_head head_saving">Saving</div></th>
+				<th scope="col"><div class="current_box top col_head head_saving">Saving (Hello Kitty)</div></th>
 				<th scope="col"><div class="current_box top col_head head_giving">Giving</div></th>
 				<th scope="col"><div class="current_box top right col_head">&nbsp;</div></th>
 			</tr>
@@ -409,9 +415,13 @@
 			</tr>
 		</tfoot>
 	</table>
+	<h2 class="table_title" id="month_name"><a href="" class="month_nav">&laquo;</a> November <a href="" class="month_nav">&raquo;</a></h2>
+	<p id="enable_editing_and_deleting_link_wrapper"><a href="#" id="enable_editing_and_deleting_link">click here to edit (or delete) your entries from November</a></p>
 </div><!-- #review_wrapper -->
 
-<div id="tab_details">see details for November</div>
+<div id="tab_details" class="hiding"><span class="show_when_hiding">see</span><span class="show_when_showing">hide</span> details for November</div>
+<div id="tab_add_income" class="hiding">add income</div>
+<div id="tab_add_expense" class="hiding">add expense</div>
 	<ul id="nav_actions">
 		<li class="nav_action money_in"><div class="words exchange in new"><a href="new_entry" class="popup_trigger">record money in</a></div></li>
 		<li class="nav_action review"><div class="words exchange">review November</div></li>
@@ -469,7 +479,7 @@
 		</table>
 		<h3>Your Info</h3>
 		<form action="" id="">
-			<label class="paired">e-mail</label><input class="labeled" value="charlie@pearbudget.com" />
+			<label class="paired">your e-mail<br /><span class="subdued" style="font-size:14px;position:relative;top:-6px">(for logging in)</span></label><input class="labeled" value="charlie@pearbudget.com" />
 		</form>
 		<p id="new_password_trigger" class="linklike">Need to set a new password? Click here.</p>
 		<form action="" id="new_password_form" style="background:#778;-moz-border-radius: 10px;border-radius: 10px;padding:10px 0 10px 60px;">
@@ -485,9 +495,6 @@
 		<div class="close linklike">close</div>
 	</div>
 
-	<div class="footer">
-		<p><a href="#" id="enable_editing_and_deleting_link">click here to edit (or delete) your entries</a></p>
-	</div>
 	<div id="colophon" class="floating_box">
 		<ul style="padding-left:20px">
 			<li><h3>Text Colors</h3>
