@@ -24,3 +24,7 @@ $(".popup_trigger").click(function(e){
 	var box = $(this).attr('href');
 	$("#"+box).fadeIn();
 });
+
+$("#tab_details").click(function(){
+	$("#review_wrapper").slideDown();
+});

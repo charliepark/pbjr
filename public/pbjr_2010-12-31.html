@@ -119,7 +119,19 @@
 	#now_table p.total{color:#445}
 
 
+
+	a{}
+	div.words a{display:block;padding:16px 20px}
+
+	div{}
 	div#colophon{color:#778}
+	
+	div#ledger_wrapper{background:#bbc;border:15px solid #eef;margin: 20px auto 0;width:1030px;-moz-border-radius: 30px;border-radius: 30px;-moz-box-shadow:inset 0 1px 3px #778,0 2px 10px #000;box-shadow:0 1px 20px #000;position:relative;z-index:1}
+	div#review_wrapper{background:#223;display:none;margin:0 auto;padding-top:1px;width:1010px;-moz-box-shadow:0 2px 5px #111;box-shadow:0 1px 5px #000;-moz-border-radius: 0 0 20px 20px;border-radius: 0 0 20px 20px;}
+
+	div#tab_details{background:#778;border:10px solid #bbc;border-top-width:0;color:#eef;cursor:pointer;margin:0 auto 0 -500px;padding:5px 0;position:relative;left:50%;text-align:center;width:300px;-moz-border-radius:  0 0 20px 20px;border-radius: 0 0 20px 20px;-moz-box-shadow:inset 0 1px 3px #445,0 2px 10px #000;}
+	div#tab_details:hover{padding-top:10px;}
+	
 	div.bottom{padding:10px 0}	
 	div.close{color:#445;position:absolute;top:0;right:0;padding:0 10px;text-align:right;width:auto;}
 	div.current_box{color:#000}
@@ -129,18 +141,19 @@
 	div.exchange{background:#0D0D0F;border:15px solid #445;font-size:30px;line-height:30px;margin:10px auto;padding:20px;position:relative;text-align:right;width:120px;-moz-border-radius: 30px;border-radius: 20px;}
 	div.current_box div.exchange{margin:0 auto}
 
-	div#ledger_wrapper{background:#bbc;border:15px solid #eef;margin: 0 auto;width:1030px;-moz-border-radius: 30px;border-radius: 30px;}
-	div#review_wrapper{background:#222;margin:0 auto;padding-top:10px;width:1000px}
 	
 	div.words{font-size:16px;line-height:15px;margin-top:50px;padding:0;text-align:center}
-	div.words a{display:block;padding:16px 20px}
 
-	
+	h3{}
 	div#colophon h3{color:#eef;font-size:20px;margin-top:20px;}
 
 
 	li{}
-	ul#nav_actions{margin:0 auto;padding-left:160px;width:900px}
+	ul#nav_actions li{margin:0;padding:0;position:absolute;top:0;right:0;width:300px;}
+	ul#nav_actions li + li{background:yellow}
+	ul#nav_actions li + li + li{background:red}
+
+
 
 	table.ledger{margin:0 auto;}
 
@@ -149,11 +162,7 @@
 	td.td_event{width:50px;}
 	td.td_action{width:90px;}
 
-
-	ul#nav_actions li{display:table-cell;margin:0;padding:0;width:300px;}
-	ul#nav_actions li + li{background:yellow}
-	ul#nav_actions li + li + li{background:red}
-	
+	ul#nav_actions{margin:0 auto;padding-left:160px;width:900px}	
 
 
 	/*
@@ -282,7 +291,6 @@
 	<h1 class="page_header with_subhead">PearBudget Junior</h1>
 	<h1 class="page_sub_head">Lucy&rsquo;s Account</h1>
 	<ul id="nav" class="nav"><li><a href="">need help?</a></li><li><a href="">home</a></li><!-- only "home" if more than one child listed --><li><a href="admin_box" class="popup_trigger">admin</a></li><li><a href="">sign out</a></li></ul>
-	<h2 class="table_title" id="now_title">Now</h2>
 
 	<div id="ledger_wrapper">
 	<table id="now_table" class="ledger">
@@ -306,11 +314,6 @@
 		</tbody>
 	</table>
 </div>
-	<ul id="nav_actions">
-		<li class="nav_action money_in"><div class="words exchange in new"><a href="new_entry" class="popup_trigger">record money in</a></div></li>
-		<li class="nav_action review"><div class="words exchange">review November</div></li>
-		<li class="nav_action money_out"><div class="words exchange out new"><a href="new_entry" class="popup_trigger">record money out</a></div></li>
-	</ul>
 
 	<div id="review_wrapper">
 	<h2 class="table_title" id="month_name"><a href="" class="month_nav">&laquo;</a> November <a href="" class="month_nav">&raquo;</a></h2>
@@ -407,6 +410,13 @@
 		</tfoot>
 	</table>
 </div><!-- #review_wrapper -->
+
+<div id="tab_details">see details for November</div>
+	<ul id="nav_actions">
+		<li class="nav_action money_in"><div class="words exchange in new"><a href="new_entry" class="popup_trigger">record money in</a></div></li>
+		<li class="nav_action review"><div class="words exchange">review November</div></li>
+		<li class="nav_action money_out"><div class="words exchange out new"><a href="new_entry" class="popup_trigger">record money out</a></div></li>
+	</ul>
 
 	<div id="new_entry" class="floating_box">
 		<div id="new_step_1" class="floating_box" style="display:block">
